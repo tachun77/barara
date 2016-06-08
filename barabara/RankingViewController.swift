@@ -9,10 +9,22 @@
 import UIKit
 
 class RankingViewController: UIViewController {
+    
+    @IBAction func modoru(){
+        self.dismissViewControllerAnimated(true, completion : nil)
+    }
+    
+    @IBOutlet var rankingLabel1: UILabel!
+    @IBOutlet var rankingLabel2: UILabel!
+    @IBOutlet var rankingLabel3: UILabel!
+    
+    let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-
+        
+        rankingLabel1.text = "1st:" + String(defaults.integerForKey("score1"))
+        rankingLabel2.text = "2nd:" + String(defaults.integerForKey("score2"))
+        rankingLabel3.text = "3rd:" + String(defaults.integerForKey("score3"))
         // Do any additional setup after loading the view.
     }
 

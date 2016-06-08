@@ -45,13 +45,31 @@ class GameViewController: UIViewController {
     @IBAction func stop(){
         if timer.valid == true{
             timer.invalidate()
-        }
             for i in 0..<3{
-                score = score - abs(Int(width/2 - positionX[i]))*2
+                score = 1000 - abs(Int(width/2 - positionX[i]))*2
         }
             resultLabel.text = "Score:" + String(score)
             resultLabel.hidden = false
         }
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        var highScore1: Int = defaults.integerForKey("score1")
+        var highScore2: Int = defaults.integerForKey("score2")
+        var highScore3: Int = defaults.integerForKey("score3")
+        
+        if score > highScore1{
+            defaults.setInteger(score,forKey:"score1")
+            defaults.setInteger(highScore1,forKey:"score2")
+            defaults.setInteger(highScore2,forKey:"score3")
+            
+        }else if score > highScore2{
+            defaults.setInteger(score,forKey:"score2")
+            defaults.setInteger(highScore2,forKey:"score3")
+            
+        }else if score > highScore3{
+    defaults.setInteger(score,forKey:"score3")
+    }
+        defaults.synchronize()
+    }
     @IBAction func retry(){
         score = 1000
         positionX = [width/2,width/2,width/2]
@@ -59,7 +77,7 @@ class GameViewController: UIViewController {
         
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad(){
             positionX = [width/2,width/2,width/2]
             
             self.start()

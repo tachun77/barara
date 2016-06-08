@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="130.66666666666666" y="300.56666666666666"/>
         </scene>
-        <!--View Controller-->
+        <!--Ranking View Controller-->
         <scene sceneID="yU4-Ug-sea">
             <objects>
-                <viewController id="yeP-rn-FI3" sceneMemberID="viewController">
+                <viewController id="yeP-rn-FI3" customClass="RankingViewController" customModule="barabara" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IMB-sg-cGf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,6 +63,9 @@
                                 <rect key="frame" x="145" y="495" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Top"/>
+                                <connections>
+                                    <action selector="modoru" destination="yeP-rn-FI3" eventType="touchUpInside" id="GiG-Z4-LmA"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ranking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DC9-j4-Qd7">
                                 <rect key="frame" x="128" y="41" width="64" height="35"/>
@@ -71,9 +74,35 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1st : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4lq-nU-bnQ">
+                                <rect key="frame" x="43" y="116" width="132" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3rd :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BEk-Ng-qUK">
+                                <rect key="frame" x="43" y="216" width="132" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2nd :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8C1-gg-14D">
+                                <rect key="frame" x="43" y="166" width="132" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="rankingLabel1" destination="4lq-nU-bnQ" id="FMT-Bs-N59"/>
+                        <outlet property="rankingLabel2" destination="8C1-gg-14D" id="wnY-ZC-fQ4"/>
+                        <outlet property="rankingLabel3" destination="BEk-Ng-qUK" id="cT9-Uo-Ake"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tpO-CX-QbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
